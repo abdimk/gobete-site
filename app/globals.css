@@ -132,15 +132,27 @@ img { display: block; max-width: 100%; }
 /* responsive */
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-art { order: -1; }
   .screen-row { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: 1fr; }
-  .download-card { grid-template-columns: 1fr; padding: 40px 28px; }
 }
 @media (max-width: 720px) {
   .wrap { width: calc(100% - 36px); }
   .nav-links { display: none; }
+  .hero { padding: 32px 0 48px; }
+  .hero h1 { font-size: 36px; }
+  .lede { font-size: 15.5px; }
+  .cta-row { flex-direction: column; }
+  .cta-row .btn { width: 100%; }
+  .hero-art img { max-width: 240px; }
   .feature-grid { grid-template-columns: 1fr; }
-  .screen-row { grid-template-columns: 1fr 1fr; }
+  .feature { padding: 22px; }
+  .screen-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin-inline: -18px; padding: 4px 18px 8px; scrollbar-width: none; }
+  .screen-row::-webkit-scrollbar { display: none; }
+  .screen { flex: 0 0 62%; scroll-snap-align: start; }
   .section { padding: 64px 0; }
+  .section-head { margin-bottom: 32px; }
+  .section-head p { font-size: 16px; }
+  .faq summary { font-size: 16px; }
   .footer-links { margin-left: 0; width: 100%; }
 }
