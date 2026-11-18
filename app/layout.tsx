@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   // Set SITE_URL when you deploy so link previews resolve against the real domain.
   metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
   title: "GoBete Find your next home in Addis Ababa",
@@ -16,7 +17,7 @@ export const metadata = {
   icons: { icon: "/gobete.png" },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

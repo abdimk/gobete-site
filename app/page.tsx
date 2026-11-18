@@ -1,13 +1,18 @@
 // Point these at the published files. `apk` sits in /public; the Play Store link is
 // left empty until the listing is live, which is what makes the second button read
 // "coming soon".
+type Feature = { title: string; body: string };
+type Step = { title: string; body: string };
+type Screen = { src: string; alt: string; label: string };
+type Faq = { q: string; a: string };
+
 const SITE = {
   apk: "/gobete.apk",
   playStore: "",
   email: "abdisamk+gobete@gmail.com",
 };
 
-const FEATURES = [
+const FEATURES: Feature[] = [
   {
     title: "One feed, not forty channels",
     body: "Listings from Telegram, Facebook and property sites, cleaned up into a single scroll with photos, price, size and the source on every card.",
@@ -26,7 +31,7 @@ const FEATURES = [
   },
 ];
 
-const STEPS = [
+const STEPS: Step[] = [
   {
     title: "Install and browse",
     body: "Download the app and create an account. Then start scrolling.",
@@ -41,7 +46,7 @@ const STEPS = [
   },
 ];
 
-const SCREENS = [
+const SCREENS: Screen[] = [
   { src: "/screens/explore.png", alt: "GoBete filters for rent, property type and monthly price", label: "Filters" },
   { src: "/screens/dealers.png", alt: "GoBete map of nearest dealers", label: "Nearest dealers" },
   { src: "/screens/details.png", alt: "GoBete listing details", label: "Listing details" },
@@ -49,7 +54,7 @@ const SCREENS = [
   { src: "/screens/saved.png", alt: "GoBete saved listings", label: "Saved" },
 ];
 
-const FAQS = [
+const FAQS: Faq[] = [
   {
     q: "Where do the listings come from?",
     a: "Social media and the web, mainly Telegram channels, Facebook and property websites. Most Telegram listings come from offices that keep their own listings and never ask for payment online.",
@@ -80,7 +85,7 @@ import { Reveal } from "./components/reveal";
 import { SpotlightCard } from "./components/spotlight-card";
 import { Aurora } from "./components/aurora";
 
-export default function Page() {
+export default function Page(): React.JSX.Element {
   return (
     <>
       <header className="nav">

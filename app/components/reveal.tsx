@@ -3,7 +3,15 @@
 import { motion } from "motion/react";
 
 // Fades and slides its children in once they scroll into view.
-export function Reveal({ children, delay = 0, className = "" }) {
+export function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   return (
     <motion.div
       className={className}
